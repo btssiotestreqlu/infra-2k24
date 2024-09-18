@@ -152,7 +152,7 @@ s1-elk@s1-elk:~$ sudo systemctl status logstash
 
 ```
 
-## 3. RsysLog
+## 3. RsysLog Client & Serveur 
 
 ```
 s1-elk@s1-elk:~$ sudo apt-get install rsyslog -y
@@ -191,5 +191,18 @@ TriggeredBy: ● syslog.socket
      Memory: 1.7M
         CPU: 19ms
 
+reqlu@debian12:~$ uname -a
+Linux debian12 6.1.0-25-amd64 #1 SMP PREEMPT_DYNAMIC Debian 6.1.106-3 (2024-08-26) x86_64 GNU/Linux
+reqlu@debian12:~$
+
+reqlu@debian12:~$ systemctl status rsyslog
+● rsyslog.service - System Logging Service
+     Loaded: loaded (/lib/systemd/system/rsyslog.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2024-09-18 11:31:40 CEST; 2min 12s ago
+TriggeredBy: ● syslog.socket
+       Docs: man:rsyslogd(8)
+reqlu@debian12:~$ sudo cat /etc/rsyslog.d/50-default.conf
+*.* @@<IP_SERVEUR>:514   => @ = UDP @@ = TCP
+reqlu@debian12:~$
 ```
 
