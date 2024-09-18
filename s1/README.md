@@ -152,3 +152,44 @@ s1-elk@s1-elk:~$ sudo systemctl status logstash
 
 ```
 
+## 3. RsysLog
+
+```
+s1-elk@s1-elk:~$ sudo apt-get install rsyslog -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following additional packages will be installed:
+  libestr0 libfastjson4 logrotate
+Suggested packages:
+  bsd-mailx | mailx rsyslog-mysql | rsyslog-pgsql rsyslog-mongodb rsyslog-doc rsyslog-openssl | rsyslog-gnutls rsyslog-gssapi rsyslog-relp
+The following NEW packages will be installed:
+  libestr0 libfastjson4 logrotate rsyslog
+0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+Need to get 582 kB of archives.
+After this operation, 2065 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu jammy/main amd64 libestr0 amd64 0.1.10-2.1build3 [7796 B]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/main amd64 libfastjson4 amd64 0.99.9-1build2 [23.0 kB]
+Get:3 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 logrotate amd64 3.19.0-1ubuntu1.1 [54.3 kB]
+Get:4 http://archive.ubuntu.com/ubuntu jammy-updates/main amd64 rsyslog amd64 8.2112.0-2ubuntu2.2 [497 kB]
+Fetched 582 kB in 1s (409 kB/s)  
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package libestr0:amd64.
+(Reading database ... 130619 files and directories currently installed.)
+Preparing to unpack .../libestr0_0.1.10-2.1build3_amd64.deb ...
+
+s1-elk@s1-elk:~$ sudo systemctl status rsyslog
+● rsyslog.service - System Logging Service
+     Loaded: loaded (/lib/systemd/system/rsyslog.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2024-09-18 09:02:09 UTC; 45s ago
+TriggeredBy: ● syslog.socket
+       Docs: man:rsyslogd(8)
+             man:rsyslog.conf(5)
+             https://www.rsyslog.com/doc/
+   Main PID: 17150 (rsyslogd)
+      Tasks: 4 (limit: 12146)
+     Memory: 1.7M
+        CPU: 19ms
+
+```
+
