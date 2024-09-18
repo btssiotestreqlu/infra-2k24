@@ -93,3 +93,62 @@ Sep 18 08:45:37 s1-elk systemd[1]: Started Kibana.
 Sep 18 08:45:38 s1-elk kibana[15753]: Kibana is currently running with legacy OpenSSL providers enabled! For details and instructions on how to disable see https://www.elastic.co/guide/en/kibana/7.17/production.html#openssl-legacy-provider
 s1-elk@s1-elk:~$
 ```
+
+## Logstash 
+
+```
+s1-elk@s1-elk:~$ sudo apt install logstash
+[sudo] password for s1-elk: 
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following NEW packages will be installed:
+  logstash
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+Need to get 371 MB of archives.
+After this operation, 629 MB of additional disk space will be used.
+Get:1 https://artifacts.elastic.co/packages/7.x/apt stable/main amd64 logstash amd64 1:7.17.24-1 [371 MB]
+Fetched 371 MB in 1min 35s (3912 kB/s)                                         
+debconf: delaying package configuration, since apt-utils is not installed
+Selecting previously unselected package logstash.
+(Reading database ... 115191 files and directories currently installed.)
+Preparing to unpack .../logstash_1%3a7.17.24-1_amd64.deb ...
+Unpacking logstash (1:7.17.24-1) ...
+
+Setting up logstash (1:7.17.24-1) ...
+
+
+```
+
+```
+s1-elk@s1-elk:~$ cat /etc/logstash/conf.d/logstash.conf
+input {
+  udp {
+    port => 514
+    type => "syslog"
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => ["localhost:9200"]
+    index => "logstash-%{+YYYY.MM.dd}"
+  }
+}
+
+s1-elk@s1-elk:~$ sudo systemctl start logstash
+s1-elk@s1-elk:~$ sudo systemctl enable logstash
+Created symlink /etc/systemd/system/multi-user.target.wants/logstash.service → /etc/systemd/system/logstash.service.
+
+
+s1-elk@s1-elk:~$ sudo systemctl status logstash
+● logstash.service - logstash
+     Loaded: loaded (/etc/systemd/system/logstash.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2024-09-18 08:58:50 UTC; 44s ago
+   Main PID: 16582 (java)
+      Tasks: 38 (limit: 12146)
+     Memory: 545.8M
+        CPU: 1min 12.231s
+
+```
+
