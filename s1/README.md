@@ -69,3 +69,27 @@ Creating kibana group... OK
 Creating kibana user... OK
 
 ```
+
+```
+s1-elk@s1-elk:~$ sudo systemctl start kibana & sudo systemctl enable kibana
+[1] 15743
+Synchronizing state of kibana.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable kibana
+Created symlink /etc/systemd/system/multi-user.target.wants/kibana.service → /etc/systemd/system/kibana.service.
+[1]+  Done                    sudo systemctl start kibana
+s1-elk@s1-elk:~$ sudo systemctl status kibana
+● kibana.service - Kibana
+     Loaded: loaded (/etc/systemd/system/kibana.service; enabled; vendor preset: enabled)
+     Active: active (running) since Wed 2024-09-18 08:45:37 UTC; 11s ago
+       Docs: https://www.elastic.co
+   Main PID: 15753 (node)
+      Tasks: 11 (limit: 12146)
+     Memory: 223.4M
+        CPU: 12.192s
+     CGroup: /system.slice/kibana.service
+             └─15753 /usr/share/kibana/bin/../node/bin/node /usr/share/kibana/bin/../src/cli/dist --logging.dest=/var/log/kibana/kibana.log --pid.file=/run/kibana/kibana.pid "--deprecation.skip_deprecated_settings[0]=logging.dest"
+
+Sep 18 08:45:37 s1-elk systemd[1]: Started Kibana.
+Sep 18 08:45:38 s1-elk kibana[15753]: Kibana is currently running with legacy OpenSSL providers enabled! For details and instructions on how to disable see https://www.elastic.co/guide/en/kibana/7.17/production.html#openssl-legacy-provider
+s1-elk@s1-elk:~$
+```
