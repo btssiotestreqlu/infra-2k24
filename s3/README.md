@@ -124,6 +124,22 @@ reqlu@ubuntu-glpi:~$
 
 ## 3. iTop - Outil de gestion des services IT, similaire à GLPI.
 
+##  Setup MySQL
+
+```
+mysql> CREATE DATABASE itop_db CHARACTER SET utf8 COLLATE utf8_general_ci;
+Query OK, 1 row affected, 2 warnings (0,04 sec)
+mysql> CREATE USER 'itop_user'@'localhost' IDENTIFIED BY 'itop_Password_2024!';
+Query OK, 0 rows affected (0,08 sec)
+mysql> GRANT ALL PRIVILEGES ON itop_db.* TO 'itop_user'@'localhost';
+Query OK, 0 rows affected (0,03 sec)
+mysql> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0,02 sec)
+
+
+
+
+```
 ### Installation des extensions :
 
 ```
@@ -144,6 +160,21 @@ Les paquets suivants ont été installés automatiquement et ne sont plus néces
   libjs-jquery-file-upload libjs-jquery-migrate-1 libjs-select2.js libldb2 liblinear4 libphp-phpmailer libswitch-perl libtalloc2 libtdb1 libtevent0
   libwbclient0 lua-lpeg nmap nmap-common ocsinventory-reports php-cas php-pclzip php-soap php8.1-soap phpqrcode python-pkg-resources
   python-setuptools python3-gpg python3-ldb python3-samba python3-talloc python3-tdb samba-common samba-common-bin samba-dsdb-modules samba-libs
+reqlu@ubuntu-glpi:~$ sudo apt install graphviz -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Les paquets suivants ont été installés automatiquement et ne sont plus nécessaires :
+  fonts-glyphicons-halflings ieee-data libapache-dbi-perl libarchive-zip-perl libblas3 libjs-bootstrap libjs-jquery-datatables
+  libjs-jquery-file-upload libjs-jquery-migrate-1 libjs-select2.js libldb2 liblinear4 libphp-phpmailer libswitch-perl libtalloc2 libtdb1 libtevent0
+  libwbclient0 lua-lpeg nmap nmap-common ocsinventory-reports php-cas php-pclzip php-soap php8.1-soap phpqrcode python-pkg-resources
+  python-setuptools python3-gpg python3-ldb python3-samba python3-talloc python3-tdb samba-common samba-common-bin samba-dsdb-modules samba-libs
+Veuillez utiliser « sudo apt autoremove » pour les supprimer.
+Les paquets supplémentaires suivants seront installés : 
+  fonts-liberation libann0 libcdt5 libcgraph6 libgts-0.7-5 libgts-bin libgvc6 libgvpr2 libice6 liblab-gamut1 libpathplan4 libsm6 libxaw7 libxmu6
+  libxt6
+Paquets suggérés :
+  graphviz-doc
 ```
 
 ### Installation iTop
