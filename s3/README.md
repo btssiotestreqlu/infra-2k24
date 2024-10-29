@@ -122,5 +122,83 @@ logout
 reqlu@ubuntu-glpi:~$
 ```
 
+## 3. iTop - Outil de gestion des services IT, similaire à GLPI.
+
+### Installation des extensions :
+
+```
+reqlu@ubuntu-glpi:~$ sudo apt install apache2 php libapache2-mod-php php-pgsql php-mbstring php-gd php-xml php-ldap php-curl -y
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+libapache2-mod-php est déjà la version la plus récente (2:8.1+92ubuntu1).
+php est déjà la version la plus récente (2:8.1+92ubuntu1).
+php-curl est déjà la version la plus récente (2:8.1+92ubuntu1).
+php-gd est déjà la version la plus récente (2:8.1+92ubuntu1).
+php-ldap est déjà la version la plus récente (2:8.1+92ubuntu1).
+php-ldap passé en « installé manuellement ».
+php-xml est déjà la version la plus récente (2:8.1+92ubuntu1).
+php-mbstring est déjà la version la plus récente (2:8.1+92ubuntu1).
+Les paquets suivants ont été installés automatiquement et ne sont plus nécessaires :
+  fonts-glyphicons-halflings ieee-data libapache-dbi-perl libarchive-zip-perl libblas3 libjs-bootstrap libjs-jquery-datatables
+  libjs-jquery-file-upload libjs-jquery-migrate-1 libjs-select2.js libldb2 liblinear4 libphp-phpmailer libswitch-perl libtalloc2 libtdb1 libtevent0
+  libwbclient0 lua-lpeg nmap nmap-common ocsinventory-reports php-cas php-pclzip php-soap php8.1-soap phpqrcode python-pkg-resources
+  python-setuptools python3-gpg python3-ldb python3-samba python3-talloc python3-tdb samba-common samba-common-bin samba-dsdb-modules samba-libs
+```
+
+### Installation iTop
+
+```
+reqlu@ubuntu-glpi:~$ curl -L -o itop.zip https://sourceforge.net/projects/itop/files/latest/download
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   631  100   631    0     0    516      0  0:00:01  0:00:01 --:--:--   516
+100   373  100   373    0     0    150      0  0:00:02  0:00:02 --:--:--  1734
+100 31.8M  100 31.8M    0     0   343k      0  0:01:35  0:01:35 --:--:--  379k
+reqlu@ubuntu-glpi:~$ ls
+itop.zip  python
+reqlu@ubuntu-glpi:~$ sudo unzip itop.zip -d /var/www/html/itop
+Archive:  itop.zip
+  inflating: /var/www/html/itop/INSTALL  
+  inflating: /var/www/html/itop/LICENSE  
+  inflating: /var/www/html/itop/web/addons/userrights/userrightsmatrix.class.inc.php  
+  inflating: /var/www/html/itop/web/addons/userrights/userrightsnull.class.inc.php  
+  inflating: /var/www/html/itop/web/addons/userrights/userrightsprofile.class.inc.php  
+  inflating: /var/www/html/itop/web/addons/userrights/userrightsprofile.db.class.inc.php  
+  inflating: /var/www/html/itop/web/addons/userrights/userrightsprojection.class.inc.php  
+  inflating: /var/www/html/itop/web/app.php  
+  inflating: /var/www/html/itop/web/application/DBSearchHelper.php  
+  inflating: /var/www/html/itop/web/application/ajaxwebpage.class.inc.php  
+  inflating: /var/www/html/itop/web/application/application.inc.php  
+  inflating: /var/www/html/itop/web/application/applicationcontext.class.inc.php  
+  inflating: /var/www/html/itop/web/application/applicationextension.inc.php  
+  inflating: /var/www/html/itop/web/application/audit.category.class.inc.php  
+  inflating: /var/www/html/itop/web/application/audit.domain.class.inc.php  
+  inflating: /var/www/html/itop/web/application/audit.rule.class.inc.php  
+  inflating: /var/www/html/itop/web/application/capturewebpage.class.inc.php  
+  inflating: /var/www/html/itop/web/application/clipage.class.inc.php  
+  inflating: /var/www/html/itop/web/application/cmdbabstract.class.inc.php  
+  inflating: /var/www/html/itop/web/application/compilecssservice.class.inc.php  
+  inflating: /var/www/html/itop/web/application/csvpage.class.inc.php  
+  inflating: /var/www/html/itop/web/application/dashboard.class.inc.php  
+  inflating: /var/www/html/itop/web/application/dashboardlayout.class.inc.php  
+  ---------
+reqlu@ubuntu-glpi:~$ sudo chown -R www-data:www-data /var/www/html/itop
+reqlu@ubuntu-glpi:~$ sudo chmod -R 755 /var/www/html/itop
+reqlu@ubuntu-glpi:~$ ls -la /var/www/html/
+total 24
+drwxr-xr-x 3 root     root      4096 oct.  29 14:10 .
+drwxr-xr-x 3 root     root      4096 nov.  27  2023 ..
+-rw-r--r-- 1 root     root     10671 nov.  27  2023 index.html
+drwxr-xr-x 3 www-data www-data  4096 oct.  29 14:10 itop
+reqlu@ubuntu-glpi:~$ sudo systemctl restart apache2
+reqlu@ubuntu-glpi:~$ sudo systemctl status apache2
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+     Active: active (running) since Tue 2024-10-29 14:12:13 UTC; 5s ago
+```
+
+
+
 
 
