@@ -265,5 +265,8 @@ reqlu@debian12:~$ systemctl status fail2ban.service
 reqlu@debian12:~$
 ```
 ## Résultat Fail2ban: 
+<img src="./assets/fail2ban.png" width="700">
+<br>
+<img src="./assets/fail2ban_client.png" width="700">
 
 
