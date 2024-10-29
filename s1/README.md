@@ -212,3 +212,58 @@ Serveur ELK + LOGSTASH :
 <img src="./assets/kibana.png" width="700">
 <br>
 <img src="./assets/client_log.png" width="700">
+
+## 4. Fail2ban ( 4 SSH Service )
+
+Suivre doc : <a href="https://doc.fedora-fr.org/wiki/SSH_:_Se_prot%C3%A9ger_des_attaques_avec_fail2ban">Doc Fedora Fail2ban</a>
+
+```
+reqlu@debian12:~$ sudo apt-get install fail2ban -y
+Lecture des listes de paquets... Fait
+Construction de l'arbre des dépendances... Fait
+Lecture des informations d'état... Fait      
+Les paquets supplémentaires suivants seront installés : 
+  python3-pyinotify python3-systemd whois
+Paquets suggérés :
+  mailx monit sqlite3 python-pyinotify-doc
+Les NOUVEAUX paquets suivants seront installés :
+  fail2ban python3-pyinotify python3-systemd whois
+0 mis à jour, 4 nouvellement installés, 0 à enlever et 71 non mis à jour.
+Il est nécessaire de prendre 589 ko dans les archives.
+Après cette opération, 2 901 ko d'espace disque supplémentaires seront utilisés.
+Réception de :1 https://ftp.debian.org/debian bookworm/main amd64 fail2ban all 1.0.2-2 [451 kB]
+
+reqlu@debian12:~$ sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+reqlu@debian12:~$ sudo less /etc/fail2ban/jail.local
+
+bantime  = 2m
+
+# A host is banned if it has generated "maxretry" during the last "findtime"
+# seconds.
+findtime  = 10m
+
+# "maxretry" is the number of failures before a host get banned.
+maxretry = 2
+
+reqlu@debian12:~$ systemctl start fail2ban.service
+==== AUTHENTICATING FOR org.freedesktop.systemd1.manage-units ====
+Authentification requise pour démarrer « fail2ban.service ».
+Authenticating as: root
+Password: 
+==== AUTHENTICATION COMPLETE ====
+reqlu@debian12:~$ systemctl status fail2ban.service
+● fail2ban.service - Fail2Ban Service
+     Loaded: loaded (/lib/systemd/system/fail2ban.service; enabled; preset: enabled)
+     Active: active (running) since Tue 2024-10-29 14:09:20 CET; 6min ago
+       Docs: man:fail2ban(1)
+   Main PID: 2450 (fail2ban-server)
+      Tasks: 5 (limit: 5951)
+     Memory: 46.9M
+        CPU: 1min 58.375s
+     CGroup: /system.slice/fail2ban.service
+             └─2450 /usr/bin/python3 /usr/bin/fail2ban-server -xf start
+reqlu@debian12:~$
+```
+## Résultat Fail2ban: 
+
+
