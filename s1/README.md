@@ -205,4 +205,10 @@ reqlu@debian12:~$ sudo cat /etc/rsyslog.d/50-default.conf
 *.* @@<IP_SERVEUR>:514   => @ = UDP @@ = TCP
 reqlu@debian12:~$
 ```
+## Resumé 1 , 2 , 3:
 
+Serveur ELK + LOGSTASH : 
+
+<img src="./assets/kibana.png" width="700">
+<br>
+<img src="./assets/client_log.png" width="700">
