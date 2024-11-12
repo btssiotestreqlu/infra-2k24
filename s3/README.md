@@ -239,7 +239,8 @@ Une fois installé on obtient l'interface suivante:
 <br>
 <img src="./assets/itop.png" width="700">
 <br>
-## 4. Datagerry - Système de gestion de parc informatique et de helpdesk.
+
+## 4. Datagerry - Outil de gestion de la documentation pour les infrastructures IT
 
 On va chercher le paquet deb sur le lien suivant :
 
