@@ -232,4 +232,19 @@ reqlu@ubuntu-glpi:~$ sudo systemctl status apache2
 ## iTop Version Web
 
 
+<img src="./assets/wizard.png" width="700">
 
+Une fois installé on obtient l'interface suivante:
+
+<br>
+<img src="./assets/itop.png" width="700">
+<br>
+## 4. Datagerry - Système de gestion de parc informatique et de helpdesk.
+
+On va chercher le paquet deb sur le lien suivant :
+
+ensuite, on configure dans /etc/datagerry/cmbd.conf les accès à la base de donnée.
+
+On lance datagerry :
+
+<img src="./assets/datagerry.png" width="700">
