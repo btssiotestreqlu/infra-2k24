@@ -152,7 +152,7 @@ s1-elk@s1-elk:~$ sudo systemctl status logstash
 
 ```
 
-## 3. RsysLog Client & Serveur 
+## 2 Bis (En plus). RsysLog Client & Serveur 
 
 ```
 s1-elk@s1-elk:~$ sudo apt-get install rsyslog -y
@@ -205,13 +205,24 @@ reqlu@debian12:~$ sudo cat /etc/rsyslog.d/50-default.conf
 *.* @@<IP_SERVEUR>:514   => @ = UDP @@ = TCP
 reqlu@debian12:~$
 ```
-## Resumé 1 , 2 , 3:
+## Resumé 1 , 2 , 2Bis:
 
 Serveur ELK + LOGSTASH : 
 
 <img src="./assets/kibana.png" width="700">
 <br>
 <img src="./assets/client_log.png" width="700">
+
+## 3. Portainer ( Gestion des conteneurs )
+
+<i>Portainer est une interface graphique de gestion pour Docker et les environnements de conteneurs (comme Docker Swarm et Kubernetes). Elle simplifie la gestion des conteneurs, images, volumes, réseaux, et autres aspects de Docker à travers une interface utilisateur intuitive, ce qui est particulièrement utile pour les administrateurs système et les développeurs.</i>
+<br>
+### Processus Docker 
+<img src="./assets/portainerdocker.png" width="700">
+<br>
+
+### Portainer web service
+<img src="./assets/portainerweb.png" width="700">
 
 ## 4. Fail2ban ( 4 SSH Service )
 
