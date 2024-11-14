@@ -22,14 +22,14 @@
     GLPI - Système de gestion de parc informatique et de helpdesk.
     iTop - Outil de gestion des services IT, similaire à GLPI.
     PostgreSQL - Système de gestion de bases de données relationnelles, souvent utilisé avec iTop ou GLPI.
-    Datagerry - Outil de gestion de la documentation pour les infrastructures IT.
+    Postfix - Serveur de messagerie électronique pour gérer l’envoi et la réception des emails.
 
 *Ce groupe est orienté vers les applications métiers et la gestion des données et des infrastructures IT.*
 
 **Semaine 4 : Services réseau, sécurité et conformité**
 
     OpenLDAP - Serveur de gestion d'annuaire pour l'authentification centralisée.
-    Postfix - Serveur de messagerie électronique pour gérer l’envoi et la réception des emails.
+    Datagerry - Outil de gestion de la documentation pour les infrastructures IT.
     NTP - Service de synchronisation de l'heure entre les serveurs.
     OpenSCAP - Outil d’audit de sécurité et de conformité, utilisé pour évaluer la sécurité des systèmes.
 
