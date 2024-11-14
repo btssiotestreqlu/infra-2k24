@@ -244,9 +244,14 @@ Une fois installé on obtient l'interface suivante:
 
 **Postfix est un serveur de messagerie (MTA) utilisé pour envoyer des emails en local ou vers l'extérieur. En local, il reçoit des emails des utilisateurs ou des applications sur le même système et les distribue dans les boîtes de réception locales. Si configuré pour l’envoi externe, il peut aussi relayer les emails vers des serveurs SMTP externes. Simple à configurer pour une utilisation locale, Postfix fonctionne en arrière-plan, gère les files d’attente d’emails, et consigne ses activités dans les journaux système pour faciliter le suivi.**
 
-### <i>Démonstration en local</i>
-
-<img src="./assets/postfix.png" width="700">
+### Démonstration en local
+***Envoi d'un mail via le client <a href="https://doc.ubuntu-fr.org/mutt">mutt</a>***
+<br>
+<img src="./assets/sendpostfix.png" width="700">
+<br>
+***Ouverture du mail***
+<br>
+<img src="./assets/recupostfix.png" width="500">
 <br>
 
 ## (More) 6. Datagerry - Outil de gestion de la documentation pour les infrastructures IT
