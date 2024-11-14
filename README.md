@@ -12,7 +12,6 @@
 
     HAProxy - Un proxy et un répartiteur de charge (load balancer), essentiel pour distribuer les connexions.
     Podman - Gestionnaire de conteneurs, souvent vu comme une alternative à Docker.
-    Portainer - Interface utilisateur web pour gérer les conteneurs (Docker, Podman, etc.).
     Rsyslog - Système de gestion des logs sur les serveurs, capable d’envoyer et de recevoir des logs à distance.
     Proxmox - Solution de virtualisation qui inclut la gestion de machines virtuelles et de conteneurs.
 
@@ -40,3 +39,6 @@
     Semaine 2 : Installation du groupe 2 (Gestion des conteneurs et monitoring)
     Semaine 3 : Installation du groupe 3 (Applications métiers et bases de données)
     Semaine 4 : Installation du groupe 4 (Services réseau, sécurité et conformité)
+
+## Choix de projets
+*S1 & S3*
