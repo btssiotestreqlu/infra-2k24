@@ -3,7 +3,7 @@
 
     Kibana - Outil de visualisation et d'analyse des logs, souvent utilisé avec Elasticsearch.
     Logstash - Pipeline de traitement des logs, souvent utilisé avec Kibana pour analyser les logs.
-    Rsyslog - Système de gestion des logs sur les serveurs, capable d’envoyer et de recevoir des logs à distance.
+    Portainer - Interface utilisateur web pour gérer les conteneurs (Docker, Podman, etc.).
     Fail2ban - Système de prévention contre les intrusions qui bloque les IP après plusieurs tentatives de connexion échouées (via l'analyse des logs).
 
 *Ces outils sont liés à la gestion, la collecte et la sécurité des logs.*
@@ -13,6 +13,7 @@
     HAProxy - Un proxy et un répartiteur de charge (load balancer), essentiel pour distribuer les connexions.
     Podman - Gestionnaire de conteneurs, souvent vu comme une alternative à Docker.
     Portainer - Interface utilisateur web pour gérer les conteneurs (Docker, Podman, etc.).
+    Rsyslog - Système de gestion des logs sur les serveurs, capable d’envoyer et de recevoir des logs à distance.
     Proxmox - Solution de virtualisation qui inclut la gestion de machines virtuelles et de conteneurs.
 
 *Ce groupe se concentre sur la virtualisation, la gestion des conteneurs et le load balancing.*
