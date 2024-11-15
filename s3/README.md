@@ -79,6 +79,10 @@ mysql>
 ```
 
 ## 2. PostgreSQL - Système de gestion de bases de données relationnelles, souvent utilisé avec iTop ou GLPI.
+<br>
+<img src="./assets/postegre.png" width="300">
+<br>
+
 ### Installation & Setup
 
 ```
@@ -125,6 +129,9 @@ reqlu@ubuntu-glpi:~$
 ```
 
 ## 3. iTop - Outil de gestion des services IT, similaire à GLPI.
+<br>
+<img src="./assets/logo_itop.png" width="500">
+<br>
 
 ##  Setup MySQL
 
@@ -243,6 +250,10 @@ Une fois installé on obtient l'interface suivante:
 <br>
 
 ## 5. Postfix - Serveur de messagerie électronique pour gérer l’envoi et la réception des emails.
+<br>
+
+<img src="./assets/postfix_logo.jpg" width="300">
+<br>
 
 **Postfix est un serveur de messagerie (MTA) utilisé pour envoyer des emails en local ou vers l'extérieur. En local, il reçoit des emails des utilisateurs ou des applications sur le même système et les distribue dans les boîtes de réception locales. Si configuré pour l’envoi externe, il peut aussi relayer les emails vers des serveurs SMTP externes. Simple à configurer pour une utilisation locale, Postfix fonctionne en arrière-plan, gère les files d’attente d’emails, et consigne ses activités dans les journaux système pour faciliter le suivi.**
 
