@@ -233,6 +233,22 @@ reqlu@debian12:~$
 
 <i>Portainer est une interface graphique de gestion pour Docker et les environnements de conteneurs (comme Docker Swarm et Kubernetes). Elle simplifie la gestion des conteneurs, images, volumes, réseaux, et autres aspects de Docker à travers une interface utilisateur intuitive, ce qui est particulièrement utile pour les administrateurs système et les développeurs.</i>
 <br>
+### On passe à l'installation:
+```
+sudo apt install docker.io -y     # installation du paquet docker
+sudo docker volume create portainer_data  # on make un volume pour y pull l'image de portainer
+
+sudo docker run -d -p 8000:8000 -p 9000:9000 \
+  --name=portainer --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_data:/data \
+  portainer/portainer-ce            # on télécharge l'image dans notre volume
+
+sudo docker update --restart=always portainer  # lancement dès le démarrage du serveur
+sudo docker start portainer                    # on démarre le conteneur
+
+```
+
 ### Processus Docker 
 <img src="./assets/portainerdocker.png" width="700">
 <br>
