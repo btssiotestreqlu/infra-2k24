@@ -1,5 +1,8 @@
 <i>Semaine 3 : Applications métiers et bases de données</i>
 
+## /!\ Infrastructure /!\
+<img src="./assets/infra_s3.png" width="500">
+<br>
 ## 1. GLPI - Système de gestion de parc informatique et de helpdesk.
 <br>
 <img src="./assets/glpi_logo.png" width="600">
