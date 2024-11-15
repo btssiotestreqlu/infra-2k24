@@ -1,6 +1,10 @@
 ***Semaine 1***
 
-*1. Infrastructure*
+## -> /!\  Infrastructure /!\ 
+
+<br>
+<img src="./assets/infra_s1.png" width="500">
+<br>
 
 **pour commencer, voici l'architecture du serveur sur lequel mes services d'administration tournerons:**
 [img -uname ]
