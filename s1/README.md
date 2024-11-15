@@ -8,7 +8,7 @@ On commence par mettre à jour nos dépôts
 ```apt update && apt upgrade -y```
 
 ## 1. Kibana & ElasticSearch
-
+### On passe à l'installation du paquet ElasticSearch 
 ```
 s1-elk@s1-elk:~$ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
 [sudo] password for s1-elk: 
@@ -27,12 +27,16 @@ Get:1 http://archive.ubuntu.com/ubuntu jammy-updates/universe amd64 apt-transpor
 Fetched 1510 B in 0s (5019 B/s)               
 
 ```
+**On ajoute à notre source.list le lien vers le paquet**
+<br>
 
 ```
 s1-elk@s1-elk:~$ echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
 deb https://artifacts.elastic.co/packages/7.x/apt stable main
 s1-elk@s1-elk:~$
 ```
+**On peut dès maintenant installer le paquet elasticsearch via apt**
+<br>
 
 ```
 s1-elk@s1-elk:~$ sudo apt-get install elasticsearch -y
@@ -44,7 +48,8 @@ The following NEW packages will be installed:
 0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
 Need to get 326 MB of archives.
 ```
-
+**On installe Kibana, qui est outil de visualisation de données pour le moteur d'indexation ElasticSearch. Il permet de mettre en forme les données dans des tableaux de bord interactifs.**
+<br>
 ```
 s1-elk@s1-elk:~$ sudo apt install kibana
 Reading package lists... Done
@@ -69,6 +74,8 @@ Creating kibana group... OK
 Creating kibana user... OK
 
 ```
+**On start les services ElasticSearch et Kibana**
+<br>
 
 ```
 s1-elk@s1-elk:~$ sudo systemctl start kibana & sudo systemctl enable kibana
