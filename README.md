@@ -1,4 +1,9 @@
-# Mise en Place d'une Infrastructure IT Centralisée et Sécurisée : Gestion des Logs, Conteneurs, Applications Métier et Services Réseau
+# Bingo de L'infra 2024 
+
+<img src="/s3/assets/utec.png" width="500">
+
+
+## Mise en Place d'une Infrastructure IT Centralisée et Sécurisée : Gestion des Logs, Conteneurs, Applications Métier et Services Réseau
 **Semaine 1 : Gestion des logs et supervision**
 
     Kibana - Outil de visualisation et d'analyse des logs, souvent utilisé avec Elasticsearch.
