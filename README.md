@@ -4,7 +4,7 @@
 
 
 ## Mise en Place d'une Infrastructure IT Centralisée et Sécurisée : Gestion des Logs, Conteneurs, Applications Métier et Services Réseau
-**Semaine 1 : Gestion des logs et supervision**
+**Semaine 1 : Gestion des logs et supervision/administration**
 
     Kibana - Outil de visualisation et d'analyse des logs, souvent utilisé avec Elasticsearch.
     Logstash - Pipeline de traitement des logs, souvent utilisé avec Kibana pour analyser les logs.
