@@ -95,7 +95,8 @@ s1-elk@s1-elk:~$
 ```
 
 ## Logstash 
-
+**On installe le paquet logstash via apt**
+<br>
 ```
 s1-elk@s1-elk:~$ sudo apt install logstash
 [sudo] password for s1-elk: 
@@ -119,6 +120,9 @@ Setting up logstash (1:7.17.24-1) ...
 
 
 ```
+<br>
+
+**Désormais, on passe à la configuration de logstash afin de faire des remontés depuis le client <br>Le retour sera afficher en format web sur le port 9000.**
 
 ```
 s1-elk@s1-elk:~$ cat /etc/logstash/conf.d/logstash.conf
@@ -151,9 +155,11 @@ s1-elk@s1-elk:~$ sudo systemctl status logstash
         CPU: 1min 12.231s
 
 ```
+**Logstash est désormais démarré et actif sur notre serveur.**
 
 ## 2 Bis (En plus). RsysLog Client & Serveur 
-
+**On installe le paquet rsyslog, et on configure le service afin de faire des remontées**
+<br>
 ```
 s1-elk@s1-elk:~$ sudo apt-get install rsyslog -y
 Reading package lists... Done
@@ -207,10 +213,13 @@ reqlu@debian12:~$
 ```
 ## Resumé 1 , 2 , 2Bis:
 
-Serveur ELK + LOGSTASH : 
+### Service web ElasticSearch : 
 
 <img src="./assets/kibana.png" width="700">
 <br>
+
+### Test de remontée via Logstash :
+
 <img src="./assets/client_log.png" width="700">
 
 ## 3. Portainer ( Gestion des conteneurs )
@@ -221,10 +230,12 @@ Serveur ELK + LOGSTASH :
 <img src="./assets/portainerdocker.png" width="700">
 <br>
 
-### Portainer web service
+### Service web Portainer 
 <img src="./assets/portainerweb.png" width="700">
 
 ## 4. Fail2ban ( 4 SSH Service )
+
+### Installation de Fail2ban
 
 Suivre doc : <a href="https://doc.fedora-fr.org/wiki/SSH_:_Se_prot%C3%A9ger_des_attaques_avec_fail2ban">Doc Fedora Fail2ban</a>
 
