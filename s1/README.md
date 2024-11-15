@@ -1,6 +1,7 @@
 ***Semaine 1***
 
 *1. Infrastructure*
+
 **pour commencer, voici l'architecture du serveur sur lequel mes services d'administration tournerons:**
 [img -uname ]
 
@@ -8,6 +9,9 @@ On commence par mettre à jour nos dépôts
 ```apt update && apt upgrade -y```
 
 ## 1. Kibana & ElasticSearch
+
+<img src="./assets/elastic.svg" width="700">
+
 ### On passe à l'installation du paquet ElasticSearch 
 ```
 s1-elk@s1-elk:~$ wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
