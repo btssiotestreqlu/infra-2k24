@@ -1,7 +1,9 @@
 <i>Semaine 3 : Applications métiers et bases de données</i>
 
 ## 1. GLPI - Système de gestion de parc informatique et de helpdesk.
-
+<br>
+<img src="./assets/glpi_logo.png" width="600">
+<br>
 GLPI étant déjà installé sur mon système, je vérifie juste l'accès au service ainsi qu'a sa base de données.
 
 <img src="./assets/glpi.png" width="700">
