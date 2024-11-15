@@ -176,7 +176,7 @@ s1-elk@s1-elk:~$ sudo systemctl status logstash
 **On installe le paquet rsyslog, et on configure le service afin de faire des remontées**
 <br>
 ```
-s1-elk@s1-elk:~$ sudo apt-get install rsyslog -y
+reqlu@debian-12:~$ sudo apt-get install rsyslog -y
 Reading package lists... Done
 Building dependency tree... Done
 Reading state information... Done
@@ -199,7 +199,7 @@ Selecting previously unselected package libestr0:amd64.
 (Reading database ... 130619 files and directories currently installed.)
 Preparing to unpack .../libestr0_0.1.10-2.1build3_amd64.deb ...
 
-s1-elk@s1-elk:~$ sudo systemctl status rsyslog
+reqlu@debian12:~$ sudo systemctl status rsyslog
 ● rsyslog.service - System Logging Service
      Loaded: loaded (/lib/systemd/system/rsyslog.service; enabled; vendor preset: enabled)
      Active: active (running) since Wed 2024-09-18 09:02:09 UTC; 45s ago
